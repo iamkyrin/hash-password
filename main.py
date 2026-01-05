@@ -11,6 +11,8 @@ try:
             hash_obj = hashlib.sha512(encoded_input)
 
             hex_digest = hash_obj.hexdigest()
+            with open("hashed password.txt", "a") as file:
+                file.write("\n" + hex_digest)
             print(hex_digest)
             user_input2 = input("Do you wish to exit? (Y/N): ").lower()
             if user_input2 == "y":
